@@ -1,0 +1,66 @@
+% Notes content
+\setcounter{section}{1}
+\section*{Basic Definitions}
+
+Given a statement of the form $P \implies Q$, its \textbf{contrapositive} is defined to be the statement $\neg Q \implies \neg P$. For example, the contrapositive of the statement:
+
+\begin{center}
+  $x > 0 \longrightarrow \neg x^3 \neq 0$
+\end{center}
+
+is the statement
+
+\begin{center}
+  $x^3 = 0 \longrightarrow \neg x > 0$
+\end{center}.
+
+It's trivial to demonstrate the $P \implies Q \iff \neg P \implies Q$. Another useful definitionn is the \textbf{converse} of some statement. Given $P \implies Q$, the converse of this statement is $Q \implies P$.
+
+\begin{definition}[1]
+  A \textbf{rule of assignment} is a subset $r$ of the cartesian product $C \times D$ of two sets, having the property that each element of $C$ appears as the first coordinate of \textit{at most one} ordered pair belonging to $r$. Thus, a subset $r$ of $C \times D$ is a rule assignment if: 
+  \begin{equation}
+     [(c, d) \in r \text{ and } (c,d') \in r] \implies [d = d']
+  \end{equation}
+\end{definition}
+
+\begin{definition}
+  A \textbf{function} $f$ is a rule of assignment r, together with a set $B$ that contains the image of $r$. The domain of A of the rule $r$ is also called the \textbf{domain} of the function $f$; the image set of $r$ is also called the \textbf{image set} of $f$; and the set $B$ is called the \textbf{range} of $f$. If $f$ is a function having domain $A$ and range $B$, we express the fact by writing
+  \begin{displaymath}
+    f: A \longrightarrow B
+  \end{displaymath}
+  
+\end{definition}
+Formally, if $r$ is the rule of the function $f$, then $f(a)$ denotes the unique element of $B$ such that $(a, f(a)) \in r$.
+\begin{definition}
+  If $f:A \to B$ and if $A_0$ is a subset of $A$, we define the \textbf{restriction} of $f$ to $A_0$ to be the function mapping $A_0$ into $B$ whose rules is
+
+  \begin{equation}
+    \{(a, f(a) | a \in A_0)\}.
+    \label{eq:restriction function}
+  \end{equation}
+It is denoted by $f|A_0$, which is read "$f$ restricted to $A_0$" 
+\end{definition}
+
+The book stats with a really useful definitions (but I'm lazy, so I'll do it quickly). A function $f: A \to B$ is said to be \textbf{injective} (or \textbf{one-to-one}) if:
+\begin{equation}
+  [f(a) = f(a')] \implies [a = a']
+\end{equation}
+
+It is said to be \textbf{surjective} (or $f$ is a map \textbf{onto} B) if:
+\begin{equation}
+  [b \in B] \implies [\exists a \in A; b = f(a)]
+\end{equation}
+
+If $f$ is both injective and surjective, it is said to be \textbf{bijective} (or is called a \textbf{one-to-one correspondence})
+
+Injectivty of $f$ depends only on the rule of $f$; surjective depends on the range of $f$ as well. It's valid that composition of functions with same "type" has the same "type" (injective, surjective)
+If $f$ is bijective, there exists a function from $B$ to $A$ called the \textbf{inverse} of $f$. It is denoted by $f^{-1}$ and is defined by letting $f^{-1}(b)$ be the unique element $a \in A$ for which $f(a) = b$. It's easy to see if $f$ is bijective, then $f^{-1}$ is also bijective.
+
+\begin{lemma}
+  Let $f: A \to B$. If there are functions $g: B \to A$ and $h: B \to A$ such that $g(f(a)) = a$ for every $a \in A$ and $f(h(b)) = b$ for every $b \in B$, the $f$ is bijective and $g = h = f^{-1}$ 
+\end{lemma}
+
+\begin{proof}
+If we have a function $g$ such that $g(f(a)) = a, \forall a \in A$, then $f$ must to be injective. Suppose $m,n in A$ which $g(f(m)) = m \land g(f(n)) = n$, if $f(m) = f(n)$, then $g(f(n)) = g(f(m))$ which means $m = n$. Conversely, if $m = n$, then $g(f(n)) = g(f(m))$, which means $f(m) = f(n)$. So $f(m) = f(n) \iff m = n$, that proves that $f$ is injective. If we have a function $h$ such that $f(h(b)) = b, \forall b \in B$, then $f$ must to be surjective.  
+\end{proof}
+

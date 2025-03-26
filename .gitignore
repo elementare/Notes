@@ -1,0 +1,13 @@
+TCC/*
+TCC
+*.pdf
+*.aux
+*.out
+*.log
+*.fls
+*.fdb_latexmk
+*.gz
+*.lock
+*/node_modules
+*/node_modules/*
+!main.pdf
