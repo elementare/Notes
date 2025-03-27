@@ -23,4 +23,55 @@ Many properties of mathematical construction can be represented by the universal
 
 Thus, given $X$ and $Y$, $<p, q>$ is "universal" among pairs of functions from some set to $X$ and $Y$, because any other such pair $<f, g>$ factors uniquely (via h) through the pair $<p ,q>$
 
-\textcolor{red}{What he means with "uniquely determined"? I'm not understanding the use of $hw = <fw, gw>$, should this mean a composition?}
+We define \textbf{Hom-set} from $X$ to $Y$ as $hom(X, Y) = \{f; f: X \to Y\}$. The "hom" comes from \textbf{homomorphism}, a general term for structure-preserving maps in category theory. In the set-theory, every function is a homomorphism because we don't care about the extra structure (like in groups or topological spaces)
+
+
+
+\begin{examplebox}[title={Universal Property of the Product}]
+Let 
+\[
+W = \{1, 2\}, \quad X = \{a, b\}, \quad Y = \{x, y\}.
+\]
+Let the projections be 
+\[
+p: X \times Y \to X, \quad p(a, x) = a, \quad q: X \times Y \to Y, \quad q(a, x) = x.
+\]
+
+We define two functions:
+\[
+f: W \to X, \quad f(1) = a,\ f(2) = b; \qquad
+g: W \to Y, \quad g(1) = x,\ g(2) = y.
+\]
+
+Then there exists a unique function:
+\[
+h: W \to X \times Y, \quad h(w) = (f(w), g(w)),
+\]
+such that the following diagram commutes:
+
+\begin{center}
+\begin{tikzcd}
+   & \arrow[dl, "f"'] W \arrow[d, "h"'] \arrow[dr, "g"] &\\
+  X & \arrow[l, "p"] X \times Y \arrow[r, "q"'] & Y
+\end{tikzcd}
+\end{center}
+
+That is, \( p \circ h = f \) and \( q \circ h = g \). For example:
+\[
+h(1) = (a, x), \quad h(2) = (b, y)
+\]
+
+We could also define a different pair:
+\[
+f': W \to X, \quad f'(1) = a,\ f'(2) = a; \qquad
+g': W \to Y, \quad g'(1) = x,\ g'(2) = y,
+\]
+yielding another unique map \( h': W \to X \times Y \) given by \( h'(w) = (f'(w), g'(w)) \), which also factors uniquely through \( \langle p, q \rangle \).
+
+\[
+h'(1) = (a, x), \quad h'(2) = (a, y)
+\]
+
+This illustrates that every pair of functions \( f, g \) from a common domain factors uniquely through the product projections \( p, q \), verifying the universal property.
+
+\end{examplebox}

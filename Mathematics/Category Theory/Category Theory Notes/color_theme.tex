@@ -1,24 +1,36 @@
-\def\RadicalWhite{
-    \definecolor{bg}{HTML}{FAFAFA}    % Softer white background
-    \definecolor{fg}{HTML}{2D2D2D}    % Dark gray text
-    \definecolor{black}{HTML}{3C3C3C}
-    \definecolor{brightblack}{HTML}{4E4E4E}
-    \definecolor{red}{HTML}{D64550}   % Deep red
-    \definecolor{brightred}{HTML}{E06C75}
-    \definecolor{green}{HTML}{5B9279} % Deep teal-green
-    \definecolor{brightgreen}{HTML}{7EC492}
-    \definecolor{yellow}{HTML}{CFA647} % Muted gold
-    \definecolor{brightyellow}{HTML}{EBCB8B}
-    \definecolor{blue}{HTML}{34699A}   % Soft navy
-    \definecolor{brightblue}{HTML}{5294E2}
-    \definecolor{magenta}{HTML}{8644A1} % Muted purple
-    \definecolor{brightmagenta}{HTML}{B48EAD}
-    \definecolor{cyan}{HTML}{0F8B8D}   % Darker cyan
-    \definecolor{brightcyan}{HTML}{70D6FF}
-    \definecolor{white}{HTML}{F0F0F0}
-    \definecolor{brightwhite}{HTML}{FFFFFF}
-    \definecolor{orange}{HTML}{E77F24} % Soft orange
-    \pagecolor{bg}\color{fg}\everymath{\displaystyle}
+% Vintage Parchment Theme
+% Inspired by the soft yellow tones of old paper.
+
+\usepackage{xcolor}
+\usepackage{pagecolor}
+
+% Soft parchment-like background
+\definecolor{parchment}{RGB}{250, 245, 229}   % light yellow-beige
+\definecolor{textblack}{RGB}{30, 30, 30}      % dark grayish text
+
+\pagecolor{parchment}
+\color{textblack}
+\definecolor{examplebg}{RGB}{255, 252, 240}  % slightly lighter parchment
+\definecolor{exampleborder}{RGB}{200, 180, 120} % soft gold-brown
+
+\tcbset{
+  myexamplebox/.style={
+    enhanced,
+    colback=examplebg,
+    colframe=exampleborder,
+    coltitle=textblack,
+    boxrule=0.5pt,
+    arc=3mm,
+    sharp corners=south,
+    fonttitle=\bfseries,
+    title={Example},
+    left=6pt,
+    right=6pt,
+    top=6pt,
+    bottom=6pt,
+    #1
+  }
 }
 
-\RadicalWhite
+\newtcolorbox{examplebox}[1][]{myexamplebox,#1}
+
