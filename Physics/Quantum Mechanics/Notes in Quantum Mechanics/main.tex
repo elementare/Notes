@@ -13,47 +13,19 @@
 % ----------------------
 % Typography and mathematics
 % ----------------------
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{mathtools}
-\usepackage{mathpartir}
+\usepackage{amsmath, amssymb, amsthm, mathtools, mathpartir}
 \usepackage{fourier}
-
-% --------------------
-% Symbol and utility packages
-% --------------------
-\usepackage{cancel}
-\usepackage{textcomp}
-\usepackage[mathscr]{euscript}
-\usepackage[nointegrals]{wasysym}
-
-% --------------------
-% Extras
-% --------------------
-\usepackage{physics}
 \usepackage{tikz}
 \usepackage{tikz-cd}
-\usetikzlibrary{decorations.markings}
-\usetikzlibrary{calc}
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{microtype}
 \usepackage{fix-cm}
-\usepackage{chemfig}
-\usepackage{mhchem}
-\usepackage{esvect}
-\usepackage{nicematrix}
-\usepackage{CJKutf8}
-\usepackage{esint}
-\usepackage{siunitx}
-\usepackage{pgfplots}
-\usepackage{circuitikz}
-\usepackage{wrapfig}
+\usepackage[most]{tcolorbox}
+
 % ----------------------
 % Utilities and formatation
 % ----------------------
-\usepackage{mathrsfs}
 \usepackage{indentfirst}
 \usepackage{hyperref}
 \usepackage{enumerate}
@@ -66,7 +38,7 @@
 \usepackage{paracol}
 \usepackage[T1]{tipa}
 \usepackage{xcolor}
-\usepackage{fullwidth}
+
 % ----------------------
 % Logic and mathematics
 % ----------------------
@@ -87,6 +59,7 @@
 \DeclareMathOperator{\lcm}{lcm}
 \DeclareMathOperator{\mmc}{mmc}
 \DeclareMathOperator{\mdc}{mdc}
+\DeclareMathOperator{\erf}{erf}
 \DeclareMathOperator{\ifc}{if}
 \let\Re\relax
 \DeclareMathOperator{\Re}{Re}
@@ -99,11 +72,8 @@
 \newcommand*{\mbb}[1]{\mathbb{#1}}
 \newcommand*{\mcl}[1]{\mathcal{#1}}
 \newcommand*{\mfr}[1]{\mathfrak{#1}}
-\newcommand*{\func}[3]{#1:#2\to#3}
-\newcommand{\vfunc}[5]{\func{#1}{#2}{#3},\quad#4\longmapsto#5}
 \newcommand*{\floor}[1]{\left\lfloor#1\right\rfloor}
 \newcommand*{\ceil}[1]{\left\lceil#1\right\rceil}
-
 
 \newcommand*\df{\mathrm{df}}
 
@@ -116,16 +86,6 @@
 
 \renewcommand*\O{\mathcal{O}}
 \renewcommand*\emptyset{\varnothing}
-
-% Some standard theorem definitions
-\newtheorem{Theorem}{Theorem}
-\newtheorem{Proposition}{Theorem}
-\newtheorem{Lemma}[Theorem]{Lemma}
-\newtheorem{Corollary}[Theorem]{Corollary}
-
-\theoremstyle{definition}
-\newtheorem{Definition}[Theorem]{Definition}
-
 
 % ----------------------
 % Always use math display
@@ -219,7 +179,6 @@
 }
 \newcommand\widebar{\wideaccent\overline}
 \makeatother
-
 
 \input{color_theme.tex}
 

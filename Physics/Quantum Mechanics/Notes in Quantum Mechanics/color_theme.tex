@@ -10,4 +10,27 @@
 
 \pagecolor{parchment}
 \color{textblack}
+\definecolor{examplebg}{RGB}{255, 252, 240}  % slightly lighter parchment
+\definecolor{exampleborder}{RGB}{200, 180, 120} % soft gold-brown
+
+\tcbset{
+  myexamplebox/.style={
+    enhanced,
+    colback=examplebg,
+    colframe=exampleborder,
+    coltitle=textblack,
+    boxrule=0.5pt,
+    arc=3mm,
+    sharp corners=south,
+    fonttitle=\bfseries,
+    title={Example},
+    left=6pt,
+    right=6pt,
+    top=6pt,
+    bottom=6pt,
+    #1
+  }
+}
+
+\newtcolorbox{examplebox}[1][]{myexamplebox,#1}
 
