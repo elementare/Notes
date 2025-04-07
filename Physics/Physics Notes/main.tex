@@ -1,0 +1,148 @@
+\documentclass[oneside]{book}
+
+% ----------------------
+% Language and Encoding
+% ----------------------
+\usepackage{fontspec}
+\usepackage{luatexja}
+\usepackage{luatexja-fontspec}
+\setmainjfont{Noto Serif CJK JP}
+
+% ----------------------
+% Mathematics (Legacy-Compatible)
+% ----------------------
+\usepackage{amsmath, amssymb, amsthm, mathtools, mathpartir}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+
+% ----------------------
+% General Formatting
+% ----------------------
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{cancel}
+\usepackage{comment}
+\usepackage{hyphenat}
+\usepackage{ellipsis}
+\usepackage{paracol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+
+% ----------------------
+% Logic (Proofs)
+% ----------------------
+\usepackage{fitch}
+\usepackage{proof}
+
+% ----------------------
+% Math Shortcuts
+% ----------------------
+\newcommand*\Implies{\mathrel{\Rightarrow}}
+\renewcommand*\implies{\mathrel{\rightarrow}}
+\newcommand*\Iff{\mathrel{\Leftrightarrow}}
+\renewcommand*\iff{\mathrel{\leftrightarrow}}
+\renewcommand*\land{\mathrel{\&}}
+\newcommand*\ex{\mathrel{\downarrow}}
+
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\mmc}{mmc}
+\DeclareMathOperator{\mdc}{mdc}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\ifc}{if}
+\let\Re\relax
+\DeclareMathOperator{\Re}{Re}
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+
+\renewcommand*\d{\mathrm{d}}
+
+% Sets
+\newcommand*\N{\mathbb{N}}
+\newcommand*\Z{\mathbb{Z}}
+\newcommand*\Q{\mathbb{Q}}
+\newcommand*\R{\mathbb{R}}
+\newcommand*\C{\mathbb{C}}
+\newcommand*\F{\mathbb{F}}
+
+% Other math utils
+\newcommand*{\mbb}[1]{\mathbb{#1}}
+\newcommand*{\mcl}[1]{\mathcal{#1}}
+\newcommand*{\mfr}[1]{\mathfrak{#1}}
+\newcommand*{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand*{\ceil}[1]{\left\lceil#1\right\rceil}
+\renewcommand*\O{\mathcal{O}}
+\renewcommand*\emptyset{\varnothing}
+\newcommand*\df{\mathrm{df}}
+
+\everymath{\displaystyle}
+
+% ----------------------
+% Links
+% ----------------------
+\hypersetup{
+    bookmarksnumbered=true,
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue,
+}
+
+% ----------------------
+% Playing card symbols
+% ----------------------
+\DeclareSymbolFont{extraup}{U}{zavm}{m}{n}
+\DeclareMathSymbol{\spades}{\mathalpha}{extraup}{81}
+\DeclareMathSymbol{\clubs}{\mathalpha}{extraup}{84}
+\DeclareMathSymbol{\hearts}{\mathalpha}{extraup}{86}
+\DeclareMathSymbol{\diamonds}{\mathalpha}{extraup}{87}
+
+% ----------------------
+% Fix \pmod*
+% ----------------------
+\makeatletter
+\let\@@pmod\pmod
+\DeclareRobustCommand{\pmod}{\@ifstar\@pmods\@@pmod}
+\def\@pmods#1{\mkern4mu({\operator@font mod}\mkern 6mu#1)}
+\makeatother
+
+% ----------------------
+% Better \widebar
+% ----------------------
+\makeatletter
+% (Seu código customizado para widebar pode entrar aqui se quiser manter. Omiti por brevidade.)
+\makeatother
+
+% ----------------------
+% Documento
+% ----------------------
+\title{Mathematica Collectanea}
+\author{eyeS}
+\date{March 2025}
+
+\input{color_theme.tex}
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\Huge \bfseries Physics Collectanea \par}
+    \vspace{0.5cm}
+    {\large A Personal Compendium of Physics Notes\par}
+    \vfill
+    {\LARGE \bfseries eyeS\par}
+    \vspace{0.5cm}
+    {\Large \textsc{March 2025}}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\input{text/condensed_matter.tex}
+\input{text/soft_condensed_matter.tex}
+\end{document}
+
