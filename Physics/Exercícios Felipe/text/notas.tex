@@ -86,5 +86,91 @@ R_H = -\frac{1}{nq} \Implies n = -\frac{1}{R_Hq}
 \end{center}
 A primeira coisa que eu notei ao observar a imagem, é que no caso do nosso semicondutor puro, intrínseco, a densidade de portadores delétrons só começa a ser relevante a partir de altas temperatura. Supondo que a função que descreve a densidade dos portadores de elétrons seja contínua, e a "tendência" da função seja a mesma, é possível perceber que a densidade dos portadores de elétrons do semicondutor intrínseco para baixas temperaturas fica praticamente perto de zero, sendo negligenciável se comparado com sua versão dopada. Dessa forma, o nosso semicondutor à baixas temperaturas age basicamente como um isolante. Ao introduzirmos uma dopagem tipo-n no nosso Ge, temos mais elétrons disponíveis. Analisando o impacto da diferentes concentrações de dopantes e temperatura na densidade dos portadores de cargas, é possível notar-se algumas coisas. Primeiro, a é que parecem haver três "regimes" que determinam a densidade dos portadores de carga. Em baixas temperaturas, temos que $n << N_d$, e para baixas concentrações de $N_D$, o crescimento de $n$ com a temperatura parece ocorrer de maneira logarítima, até que chegamos à situação onde $n = N_D$. Nessa situação a variação de temperatura não afeta muito $n$, até que chegamos no regime de altas temperaturas e $n>N_D$. Nesse caso, podemos presumir que a temperatura foi o suficiente para ionizar os átomos, fazendo com que mais elétrons vão para a banda de condução, deixando buracos na banda de valência. É interessante notar que o aumento de concentração de dopantes faz com que o comportamento da função no gráfico $n \times K$ seja cada vez mais linear. Porém, quando chegamos em uma concentração tão alta de dopante, $N_D = 10^{18}$, praticamente a densidade de portadores de cargas é uma constante. Eu pressuponho que isso ocorre pelo fato da quantitade de elementos dopantes serem extremamente maiores do que a quantidade de átomos de Germânio.
   
-\item {}
+\item Um semicondutor com um bandgap Eg = 1 eV e com as massas efetivas dos elétrons e dos buracos iguais à massa do elétrons livre, $m^∗_e = m^∗_h = m_0$, é dopado tipo-p com concentração de elementos aceitadores $p = 10^{18} cm^{−3}$.O nível de energia dos aceitadores é localizado em 0.2 eV acima da banda de valência do material.
+
+  \begin{enumerate}
+    \item mostre que a condução intrínseca (não dopado) deste material é desprezível à temperatura de 300 K
+
+      Para mostrar que a conduão intrínseca deste material é desprezível à temperatura de 300K, podemos nos lembrar do fato passsado na nota de aula que todo elétron na banda de condução está relacionado a um buraco na banda de valência:
+
+      \begin{equation}
+          n = p = 24\left(\frac{k_BT}{2\pi\hbar^2}\right)^{3/2}(m_e^*m_h^*)^{3/4}e^{-E_g/2k_BT} 
+      \end{equation}
+      
+      Substituindo os valores, parte a parte, obtemos o seguinte:
+
+      \begin{center}
+        \begin{align*}
+          & k_B  \approx 8,617 \times 10^{-5}eV/K\\
+          & k_BT  \approx 0,02585eV\\
+          & \frac{E_g}{2k_BT}  \approx \frac{1 eV}{2 \times 0,02585 eV} \approx 19,34\\
+          & e^{-\frac{E_g}{2k_BT}}  \approx e^{-19,34} \approx 3,9 \times 10^{-9}
+        \end{align*}
+      \end{center}
+        Agora precisamos analisar o fator anterior à essa exponencial. Lembrando que $m^*_e = m^*_h = m_0$ (e p
+        ulando algumas etapas do cálculo...), temos que:
+
+        $$24\left(\frac{k_BT}{2\pi\hbar^2}\right)^{3/2}(m_e^*m_h^*)^{3/4}e^{-E_g/2k_BT} \approx (2 \ a \ 5) \times 10^{19}cm^{-3}$$
+
+        Sendo assim, obtemos:
+
+        $$n \approx (2 \ a \ 5)\times 10^{19} \times 3,9 \times 10^{-9} \approx (0,8 \ a \ 2) \times 10^{11}cm^{-3}$$
+         
+        Como a concentração de portadores de carga é 7 ordens de magnitudde menor do que a densidade de portadores no material dopado, podemos dizer que é sua condução intrínseca é desprezível.
+        
+      \item calcule a condutividade (\sigma) deste material à temperatura ambiente ($300 K$), dada uma mobilidade dos buracos de $\mu_p = 100 cm^2/Vs$ à $300 K$
+
+        Sabendo que $\sigma = qp\mu_p$, podemos substituir os valores:
+
+        $$\sigma = \left(1,6\times 10^{-19}A\cdot s\right) \times \left(10^{18}cm^{-3}\right) \left(100cm^2/V\cdot s\right) \approx 16 S/cm$$
+
+        \item Faça um gráfico do logaritmo da concentração de buracos, ln(p), em função da temperatura recíproca (1/T) para intervalos de temperatura entre 100 K e 1000 K.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.5]{images/gráfico.png}
+\end{figure}
+
+  \end{enumerate}
+
+ \item Calcule a distância energética entre o nível de Fermi ($E_F$) e o meio do gap de energia para o silício puro e para o GaAs em 300 K. Explique o porque $E_F$ não é no meio do gap de energia. 
+
+Como vimos nas notas de aula, temos que:\\
+\\
+\begin{equation}
+  n = 2\left(\frac{2m_e^*k_BT}{2\pi\hbar^2}\right)^{3/2}e^{(\mu - E_c)/k_BT}
+\end{equation}
+
+Vamos definir que:
+
+$$N_C = 2\left(\frac{2m_e^*k_BT}{2\pi\hbar^2}\right)^{3/2}$$
+
+De maneira análoga, também definimos o $N_V$. Então podemos mostrar que $n$ é:
+\begin{equation}
+  n = N_Ce^{(\mu - E_C)/(k_BT)}, \ \ p = N_Ve^{(E_V - \mu)/k_BT} 
+\end{equation}
+
+Como $n = p = n_i$, podemos dizer que $n_i = \sqrt{np}$, ou seja:
+
+$$n_i = \sqrt{N_CN_V}e^{-E_g/2k_BT}$$
+
+Porém, sabemos que no semicondutor intrínseco $n = p = n_i$, dessa forma, podemos também dizer que:
+
+$$n_i = N_C e^{\frac{\mu - E_C}{k_BT}}$$
+
+Igualando as duas expressões para $n_i$, obtemos:
+
+$$e^{(\mu - E_C)/k_BT} = \left(\frac{N_V}{N_C}\right)^{1/2}e^{-E_g/(2k_BT)}\\
+\\
+\Implies \frac{\mu - E_C}{k_BT} = \frac{1}{2}\ln{\left(\frac{N_V}{N_C}\right)} - \frac{E_g}{2k_BT}\\
+\\
+\Implies \mu = E_C - \frac{E_g}{2} + \frac{k_BT}{2}\ln{\left(\frac{N_V}{N_C}\right)}$$
+
+Mas nós sabemos que $\mu = E_{Fi}$ (nível de fermi intrínseco), e que $E_g = E_C - E_V$, logo, obtemos que:
+
+\begin{equation}
+  E_{Fi} = \frac{E_C + E_V}{2} + \frac{k_BT}{2}\ln{\left(\frac{N_V}{N_C}\right)} 
+\end{equation}
+
+Resolvendo a questão, para o Silício, temos que o gap a 300K: $E_g \approx 1.12eV,\  m_e^*\approx 1.10m_0, \ m_h^* \approx 0.56$. Desse modo a razão $m_h^*/m_e^*$
 \end{enumerate}
